@@ -102,4 +102,102 @@
         font-size: 22px;
         line-height: 26px;
     }
+
+
+    .products .tabs
+    {
+        margin-bottom: 32px;
+        margin-left: -40px;
+    }
+
+    .products .tabs button
+    {
+        font-size: 26px;
+
+        margin-left: 40px;
+    }
+
+
+    .products .product
+    {
+        padding: 15px;
+    }
+
+
+
+    /*-------------------
+        Category info
+    -------------------*/
+    .category_info aside
+    {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+
+    .category_info .content
+    {
+        width: 100%;
+    }
+
+
+    .category_info .mob_btns
+    {
+        display: flex;
+    }
+
+
+
+    /*----------------
+        Categories
+    ----------------*/
+    .categories
+    {
+        display: none;
+
+        margin-top: 20px;
+    }
+
+
+
+    /*------------
+        Filter
+    ------------*/
+    * + .filter
+    {
+        margin-top: 0;
+    }
+
+    .filter
+    {
+        display: none;
+
+        margin-top: 20px;
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block h1
+    {
+        font-size: 26px;
+    }
+
+
+
+    /*----------------
+        Advantages
+    ----------------*/
+    .advantages .item
+    {
+        font-size: 17px;
+        line-height: 23px;
+    }
+
+    .advantages .item .icon
+    {
+        height: 80px;
+    }
 }

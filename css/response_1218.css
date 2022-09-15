@@ -29,6 +29,28 @@
 
 
 
+    /*----------------
+        Pagination
+    ----------------*/
+    .pagination
+    {
+        margin-top: 40px;
+    }
+
+
+    .pagination .load_more
+    {
+        font-size: 15px;
+        line-height: 17px;
+
+        width: 180px;
+        height: 40px;
+        margin-bottom: 28px;
+        padding: 0;
+    }
+
+
+
     /*------------------
         Product info
     ------------------*/
@@ -66,24 +88,23 @@
 
     .product_info .buy
     {
-        margin-top: 20px;
-
         justify-content: flex-start;
+
+        margin-top: 20px;
     }
 
 
     .product_info .price
     {
         display: flex;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
 
         width: 100%;
         margin-top: 0;
         margin-bottom: 12px;
-
-        justify-content: flex-start;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
     }
 
     .product_info .price .label
@@ -172,9 +193,35 @@
     }
 
 
-    .products .product
+    .products .tabs
     {
-        padding: 11px 15px 15px;
+        margin-bottom: 36px;
+        margin-left: -48px;
+    }
+
+    .products .tabs button
+    {
+        font-size: 28px;
+
+        margin-left: 48px;
+    }
+
+
+    .products .row
+    {
+        margin-bottom: -20px;
+    }
+
+    .products .row > *
+    {
+        width: calc(33.333% - 20px);
+        margin-bottom: 20px;
+    }
+
+
+    .products .product .thumb
+    {
+        margin-bottom: 16px;
     }
 
 
@@ -183,9 +230,124 @@
         width: 100%;
     }
 
+
     .products .product .buy_btn
     {
         width: 100%;
-        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+
+
+    /*-------------------
+        Category info
+    -------------------*/
+    .category_info
+    {
+        margin-bottom: 72px;
+    }
+
+
+    .category_info aside
+    {
+        width: 240px;
+    }
+
+
+    .category_info .content
+    {
+        width: calc(100% - 280px);
+    }
+
+
+    .category_info .category_name
+    {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+
+
+    /*----------------
+        Categories
+    ----------------*/
+    .categories .sub > * + *
+    {
+        margin-top: 16px;
+    }
+
+    .categories .sub a
+    {
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+
+
+    /*------------
+        Filter
+    ------------*/
+    * + .filter
+    {
+        margin-top: 60px;
+    }
+
+
+    .filter .item + .item
+    {
+        margin-top: 40px;
+    }
+
+
+    .filter .field + .field
+    {
+        margin-top: 16px;
+    }
+
+
+    .filter label
+    {
+        font-size: 16px;
+    }
+
+
+    .filter .submit
+    {
+        margin-top: 40px;
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block h1
+    {
+        font-size: 28px;
+
+        margin-bottom: 20px;
+    }
+
+
+
+    /*----------------
+        Advantages
+    ----------------*/
+    .advantages
+    {
+        padding: 40px 0;
+    }
+
+
+    .advantages .item
+    {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .advantages .item .icon
+    {
+        height: 84px;
+        margin-bottom: 16px;
     }
 }

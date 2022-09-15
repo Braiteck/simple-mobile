@@ -116,6 +116,61 @@ $(() => {
 	})
 
 
+	// Кастомный select
+	$('select').niceSelect()
+
+
+	// Боковая колонка - Категории
+	$('.categories .main a.sub_link').click(function (e) {
+		e.preventDefault()
+
+		let parent = $(this).closest('.item')
+
+		if($(this).hasClass('active')){
+			$('.categories .main a.sub_link').removeClass('active')
+			$('.categories .sub').slideUp(300)
+		} else {
+			$('.categories .main a.sub_link').removeClass('active')
+			$('.categories .sub').slideUp(300)
+
+			$(this).toggleClass('active')
+			parent.find('.sub').slideToggle(300)
+		}
+	})
+
+
+	// Моб. кнопки
+	$('.category_info .mob_btns .mob_categories_btn').click(function (e) {
+		e.preventDefault()
+
+		if($(this).hasClass('active')){
+			$('.categories').slideUp(200)
+			$(this).removeClass('active')
+		} else {
+			$('.filter').hide()
+			$('.categories').slideDown(300)
+
+			$('.category_info .mob_btns .btn').removeClass('active')
+			$(this).addClass('active')
+		}
+	})
+
+	$('.category_info .mob_btns .mob_filter_btn').click(function (e) {
+		e.preventDefault()
+
+		if($(this).hasClass('active')){
+			$('.filter').slideUp(200)
+			$(this).removeClass('active')
+		} else {
+			$('.categories').hide()
+			$('.filter').slideDown(300)
+			
+			$('.category_info .mob_btns .btn').removeClass('active')
+			$(this).addClass('active')
+		}
+	})
+
+
 	// Изменение количества товара
 	$('body').on('click', '.amount .minus', function (e) {
 		e.preventDefault()
@@ -152,6 +207,42 @@ $(() => {
 			if (_self.val() > maximum) _self.val(maximum)
 		})
 	})
+
+
+	// Табы
+	var locationHash = window.location.hash
+
+	$('body').on('click', '.tabs button', function(e) {
+		e.preventDefault()
+
+		if (!$(this).hasClass('active')) {
+			const $parent           = $(this).closest('.tabs_container'),
+				  activeTab         = $(this).data('content'),
+				  $activeTabContent = $(activeTab),
+				  level             = $(this).data('level')
+
+			$parent.find('.tabs:first button').removeClass('active')
+			$parent.find('.tab_content.' + level).removeClass('active')
+
+			$(this).addClass('active')
+			$activeTabContent.addClass('active')
+		}
+	})
+
+	if (locationHash && $('.tabs_container').length) {
+		const $activeTab        = $(`.tabs button[data-content="${locationHash}"]`),
+			  $activeTabContent = $(locationHash),
+			  $parent           = $activeTab.closest('.tabs_container'),
+			  level             = $activeTab.data('level')
+
+		$parent.find('.tabs:first button').removeClass('active')
+		$parent.find('.tab_content.' + level).removeClass('active')
+
+		$activeTab.addClass('active')
+		$activeTabContent.addClass('active')
+
+		$('html, body').stop().animate({ scrollTop: $activeTabContent.offset().top }, 1000)
+	}
 
 
 	// Fancybox

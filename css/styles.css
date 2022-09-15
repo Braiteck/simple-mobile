@@ -203,6 +203,137 @@ button
 
 
 
+/*----------
+    Tabs
+----------*/
+.tab_content
+{
+    position: relative;
+
+    visibility: hidden;
+    overflow: hidden;
+
+    height: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+.tab_content.active
+{
+    visibility: visible;
+    overflow: visible;
+
+    height: auto;
+
+    transition: opacity .5s linear;
+    pointer-events: auto;
+
+    opacity: 1;
+}
+
+
+
+/*----------------
+    Pagination
+----------------*/
+.pagination
+{
+    margin-top: 38px;
+}
+
+
+.pagination .load_more
+{
+    font-size: 16px;
+    line-height: 18px;
+
+    display: block;
+
+    width: 210px;
+    height: 44px;
+    margin: 0 auto 40px;
+    padding: 13px;
+
+    color: #fff;
+    border-radius: 4px;
+    background: #99c339;
+}
+
+
+.pagination .links
+{
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination .links > * + *
+{
+    margin-left: 5px;
+}
+
+
+.pagination .links a,
+.pagination .links .sep
+{
+    line-height: 32px;
+
+    display: inline-block;
+
+    width: 34px;
+    height: 34px;
+
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+
+    color: #000;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background: #fff;
+}
+
+
+.pagination .links a.prev,
+.pagination .links a.next
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination .links a.prev
+{
+    margin-right: 7px;
+}
+
+.pagination .links a.next
+{
+    margin-left: 12px;
+}
+
+.pagination .links a.prev img,
+.pagination .links a.next img
+{
+    display: block;
+
+    width: 24px;
+    height: 24px;
+}
+
+.pagination .links a.next img
+{
+    transform: rotate(180deg);
+}
+
+
+
 /*---------------
     Page head
 ---------------*/
@@ -932,7 +1063,7 @@ button
 --------------*/
 .products
 {
-    margin-bottom: 61px;
+    margin-bottom: 68px;
 }
 
 
@@ -943,6 +1074,64 @@ button
     line-height: 29px;
 
     margin-bottom: 22px;
+}
+
+
+.products .tabs
+{
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-bottom: 40px;
+    margin-left: -54px;
+}
+
+
+.products .tabs button
+{
+    font-size: 30px;
+    line-height: 34px;
+
+    position: relative;
+
+    margin-left: 54px;
+
+    transition: color .2s linear;
+
+    color: #121111;
+}
+
+.products .tabs button:after
+{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    content: '';
+    transition: opacity .2s linear;
+
+    opacity: 0;
+    border-bottom: 1px dashed #99c339;
+}
+
+
+.products .tabs button:hover,
+.products .tabs button.active
+{
+    font-weight: 500;
+
+    color: #83b118;
+}
+
+.products .tabs button.active:after
+{
+    opacity: 1;
 }
 
 
@@ -973,35 +1162,57 @@ button
 }
 
 
+.products .row
+{
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-bottom: -17px;
+    margin-left: -20px;
+}
+
+.products .row > *
+{
+    width: calc(25% - 20px);
+    margin-bottom: 17px;
+    margin-left: 20px;
+}
+
+
 .products .product
 {
     position: relative;
 
-    padding: 10px 17px 22px;
+    padding: 20px 15px;
 
-    border: 1px solid #dcdcdc;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    background: #fff;
 }
 
 
 .products .product .sticker
 {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
 
     position: absolute;
     z-index: 3;
     top: 19px;
-    left: 15px;
+    left: 21px;
 
-    padding: 4px 5px 3px;
+    padding: 3px 9px;
 
     white-space: nowrap;
     text-transform: uppercase;
 
     color: #fff;
-    border-radius: 2px;
-    background: #99c338;
+    border-radius: 4px;
+    background: #2fb600;
 }
 
 
@@ -1009,8 +1220,8 @@ button
 {
     position: absolute;
     z-index: 3;
-    top: 10px;
-    right: 13px;
+    top: 20px;
+    right: 15px;
 
     display: flex;
     align-content: center;
@@ -1018,14 +1229,8 @@ button
     flex-wrap: wrap;
     justify-content: center;
 
-    width: 42px;
-    height: 42px;
-
-    transition: background .2s linear;
-
-    border: 1px solid #99c338;
-    border-radius: 50%;
-    background: #fff;
+    width: 19px;
+    height: 19px;
 }
 
 .products .product .favorite_btn img,
@@ -1041,12 +1246,6 @@ button
 }
 
 
-.products .product .favorite_btn.active
-{
-    background: #99c338;
-}
-
-
 .products .product .thumb
 {
     position: relative;
@@ -1054,7 +1253,8 @@ button
     display: block;
     overflow: hidden;
 
-    padding-bottom: 100%;
+    margin-bottom: 25px;
+    padding-bottom: 140px;
 }
 
 .products .product .thumb div
@@ -1085,7 +1285,10 @@ button
 .products .product .name
 {
     font-size: 14px;
+    font-weight: 500;
     line-height: 16px;
+
+    text-align: center;
 }
 
 .products .product .name a
@@ -1099,14 +1302,27 @@ button
 }
 
 
+.products .product .articul
+{
+    font-size: 12px;
+    line-height: 14px;
+
+    margin-top: 6px;
+
+    opacity: .5;
+    color: #000;
+}
+
+
 .products .product .price
 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 22px;
+    line-height: 21px;
 
-    margin-top: 16px;
+    margin-top: 13px;
 
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -1117,9 +1333,9 @@ button
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
 
-    margin-top: 23px;
+    margin-top: 17px;
 }
 
 
@@ -1127,7 +1343,7 @@ button
 {
     position: relative;
 
-    width: 109px;
+    width: 72px;
 }
 
 .products .product .amount button
@@ -1136,7 +1352,7 @@ button
     z-index: 3;
     top: 0;
     bottom: 0;
-    left: 7px;
+    left: 5px;
 
     display: flex;
     align-content: center;
@@ -1144,14 +1360,14 @@ button
     flex-wrap: wrap;
     justify-content: center;
 
-    width: 24px;
-    height: 24px;
+    width: 15px;
+    height: 15px;
     margin: auto;
 }
 
 .products .product .amount button.plus
 {
-    right: 7px;
+    right: 5px;
     left: auto;
 }
 
@@ -1159,39 +1375,630 @@ button
 .products .product .amount .input
 {
     font-family: var(--font_family);
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 17px;
+    font-size: 14px;
 
     display: block;
 
     width: 100%;
-    height: 49px;
-    padding: 0 36px;
+    height: 36px;
+    padding: 0 23px;
 
     text-align: center;
 
     color: #000;
-    border: 1px solid #ededed;
-    border-radius: 3px;
-    background: rgba(217, 217, 217, .1);
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    background: #fff;
 }
 
 
 .products .product .buy_btn
 {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
+    line-height: 15px;
+
+    display: block;
+
+    width: calc(100% - 80px);
+    height: 36px;
+    padding-bottom: 2px;
+
+    color: #fff;
+    border-radius: 4px;
+    background: #99c339;
+}
+
+
+
+
+.products .row .product
+{
+    padding: 16px 14px;
+}
+
+.products .row .product .favorite_btn
+{
+    top: 14px;
+    right: 16px;
+}
+
+.products .row .product .name,
+.products .row .product .price
+{
+    text-align: left;
+}
+
+
+
+/*-------------------
+    Category info
+-------------------*/
+.category_info
+{
+    margin-bottom: 44px;
+}
+
+
+.category_info .cont
+{
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.category_info aside
+{
+    width: 289px;
+    max-width: 100%;
+}
+
+
+.category_info .content
+{
+    width: calc(100% - 342px);
+}
+
+.category_info .content > *
+{
+    margin-bottom: 0 !important;
+}
+
+.category_info .content > * + *
+{
+    margin-top: 20px;
+}
+
+
+.category_info .category_name
+{
+    font-size: 36px;
+    line-height: 41px;
+
+    color: #121111;
+}
+
+
+
+.category_info .mob_btns
+{
+    display: none;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category_info .mob_btns .btn
+{
+    font-size: 15px;
+    line-height: 19px;
+
+    display: block;
+
+    width: calc(50% - 10px);
+    height: 44px;
+
+    color: #fff;
+    border-radius: 4px;
+    background: #99c339;
+}
+
+
+
+/*----------
+    Tags
+----------*/
+.tags
+{
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-bottom: -8px;
+    margin-left: -10px;
+}
+
+.tags > *
+{
+    margin-bottom: 8px;
+    margin-left: 10px;
+}
+
+
+.tags a
+{
+    font-size: 14px;
+    line-height: 16px;
+
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    vertical-align: top;
+    white-space: nowrap;
+    text-decoration: none;
+
+    color: #000;
+    border-radius: 3px;
+    background: rgba(153, 195, 57, .2);
+}
+
+
+
+/*----------
+    Sort
+----------*/
+.sort
+{
+    font-size: 14px;
+    line-height: 16px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    color: #000;
+}
+
+
+.sort .name
+{
+    margin-right: 17px;
+}
+
+
+.sort .field
+{
+    position: relative;
+}
+
+
+.sort select
+{
+    display: none;
+}
+
+
+.sort .nice-select
+{
+    position: relative;
+
+    display: block;
+
+    width: 213px;
+}
+
+
+.sort .nice-select .current
+{
+    font-size: 14px;
+    line-height: 43px;
+
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    height: 45px;
+    padding: 0 42px 0 17px;
+
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #000;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+
+.sort .nice-select .list
+{
+    position: absolute;
+    z-index: 9;
+    top: calc(100% + 20px);
+    left: 0;
+
+    visibility: hidden;
+    overflow: hidden;
+
+    min-width: 100%;
+
+    transition: .2s linear;
+
+    opacity: 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.sort .nice-select.open .list
+{
+    top: calc(100% - 1px);
+
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+.sort .nice-select .list .list_item
+{
+    font-size: 14px;
+
+    padding: 8px 17px;
+
+    cursor: pointer;
+}
+
+.sort .nice-select .list .list_item:empty
+{
+    display: none;
+}
+
+
+.sort .nice-select + .arr
+{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+
+    margin: auto;
+
+    pointer-events: none;
+}
+
+
+
+/*----------------
+    Categories
+----------------*/
+.categories .item + .item
+{
+    border-top: 1px solid #ddd;
+}
+
+
+.categories .main a
+{
+    font-size: 17px;
+    line-height: 20px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 13px 10px;
+
+    text-decoration: none;
+
+    color: #121111;
+}
+
+.categories .main a .arr
+{
+    display: block;
+
+    width: 15px;
+    height: 15px;
+    margin-left: auto;
+
+    transition: transform .2s linear;
+    transform: rotate(-90deg);
+}
+
+
+.categories .main a:hover
+{
+    color: #99c339;
+}
+
+.categories .main a.active
+{
+    font-weight: 500;
+
+    color: #99c339;
+}
+
+.categories .main a.active .arr
+{
+    transform: rotate(0);
+}
+
+
+.categories .sub
+{
+    display: none;
+
+    padding: 7px 0 24px 29px;
+}
+
+.categories .sub > * + *
+{
+    margin-top: 17px;
+}
+
+.categories .sub a
+{
+    font-size: 16px;
     line-height: 18px;
 
     display: block;
 
-    width: 120px;
-    height: 49px;
-    margin-left: auto;
-    padding-bottom: 2px;
+    text-decoration: none;
+
+    color: #121111;
+}
+
+
+
+/*------------
+    Filter
+------------*/
+* + .filter
+{
+    margin-top: 65px;
+}
+
+
+.filter .item + .item
+{
+    margin-top: 74px;
+}
+
+
+.filter .name
+{
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+
+    margin-bottom: 17px;
+
+    color: #121111;
+}
+
+
+.filter .field + .field
+{
+    margin-top: 20px;
+}
+
+.filter .field.margin
+{
+    margin-top: 25px;
+}
+
+
+.filter label
+{
+    font-size: 17px;
+    line-height: 20px;
+
+    position: relative;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    min-height: 24px;
+    padding-left: 34px;
+
+    cursor: pointer;
+
+    color: #121111;
+}
+
+.filter label input
+{
+    display: none;
+}
+
+.filter label .check
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+
+    border: 1px solid #bebebe;
+    border-radius: 2px;
+}
+
+.filter label .check div
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+
+    transition: opacity .2s linear;
+
+    opacity: 0;
+    border-radius: 2px;
+    background: #99c339;
+}
+
+.filter label .check img
+{
+    display: block;
+
+    width: 11px;
+    height: 11px;
+}
+
+.filter label input:checked + .check div
+{
+    opacity: 1;
+}
+
+
+.filter .submit
+{
+    margin-top: 45px;
+}
+
+.filter .submit_btn
+{
+    font-size: 16px;
+    line-height: 18px;
+
+    display: block;
+
+    width: 210px;
+    max-width: 100%;
+    height: 44px;
+    padding: 13px;
 
     color: #fff;
-    border-radius: 3px;
-    background: #99c338;
+    border-radius: 4px;
+    background: #99c339;
+}
+
+
+
+/*----------------
+    Typography
+----------------*/
+.text_block
+{
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #121111;
+}
+
+
+.text_block > *
+{
+    margin-bottom: 20px;
+}
+
+
+.text_block > :last-child
+{
+    margin-bottom: 0 !important;
+}
+
+.text_block > :first-child
+{
+    margin-top: 0 !important;
+}
+
+
+.text_block h1
+{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 34px;
+
+    margin-bottom: 23px;
+
+    color: #83b118;
+}
+
+
+
+/*--------------
+    SEO text
+--------------*/
+.seo_text
+{
+    margin-bottom: 60px;
+}
+
+
+
+/*----------------
+    Advantages
+----------------*/
+.advantages
+{
+    padding: 37px 0 40px;
+
+    background: #99c339;
+}
+
+
+.advantages .row
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.advantages .item
+{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+
+    text-align: center;
+
+    color: #000;
+}
+
+
+.advantages .item .icon
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: 92px;
+    margin-bottom: 17px;
+}
+
+.advantages .item .icon img
+{
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
 }

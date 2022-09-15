@@ -21,6 +21,21 @@
 
 
 
+    /*----------------
+        Pagination
+    ----------------*/
+    .pagination .links a.prev
+    {
+        margin-right: 5px;
+    }
+
+    .pagination .links a.next
+    {
+        margin-left: 10px;
+    }
+
+
+
     /*------------------
         Product info
     ------------------*/
@@ -105,27 +120,100 @@
     /*--------------
         Products
     --------------*/
-    .products .product .thumb
+    .products .tabs
     {
-        padding-bottom: 230px;
+        margin-bottom: 28px;
+        margin-left: -24px;
     }
 
 
-    .products .product
+    .products .tabs button
     {
-        padding: 11px 19px 19px;
+        font-size: 22px;
+
+        margin-left: 24px;
     }
 
+    .products .tabs button:after
+    {
+        bottom: -1px;
+    }
+
+
+    .products .row
+    {
+        margin-left: 0;
+    }
+
+    .products .row > *
+    {
+        width: 100%;
+        margin-bottom: 12px;
+        margin-left: 0;
+    }
+
+
+    .products .product,
+    .products .row .product
+    {
+        padding: 19px;
+    }
 
     .products .product .amount
     {
-        width: 109px;
+        width: 84px;
     }
-
 
     .products .product .buy_btn
     {
-        width: calc(100% - 121px);
-        margin-top: 0;
+        width: calc(100% - 92px);
+        margin-bottom: 0;
+    }
+
+
+
+    /*-------------------
+        Category info
+    -------------------*/
+    .category_info
+    {
+        margin-bottom: 60px;
+    }
+
+
+    .category_info .mob_btns .btn
+    {
+        width: calc(50% - 5px);
+        height: 40px;
+    }
+
+
+    .category_info .category_name
+    {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+
+
+    /*----------
+        Sort
+    ----------*/
+    .sort .name
+    {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block h1
+    {
+        font-size: 22px;
+        line-height: 30px;
     }
 }
