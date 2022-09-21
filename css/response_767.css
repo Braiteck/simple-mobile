@@ -231,4 +231,38 @@
     {
         height: 76px;
     }
+
+
+
+    /*--------------
+        Articles
+    --------------*/
+    .articles .row
+    {
+        margin-bottom: -12px;
+        margin-left: -12px;
+    }
+
+    .articles .row > *
+    {
+        width: calc(50% - 12px);
+        margin-bottom: 12px;
+        margin-left: 12px;
+    }
+
+
+    .articles .article .info
+    {
+        padding: 15px;
+    }
+
+    .articles .article .desc
+    {
+        margin-top: 16px;
+    }
+
+    .articles .article .link
+    {
+        margin-top: 20px;
+    }
 }

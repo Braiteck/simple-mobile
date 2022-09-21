@@ -350,4 +350,37 @@
         height: 84px;
         margin-bottom: 16px;
     }
+
+
+
+    /*--------------
+        Articles
+    --------------*/
+    .articles .block_title
+    {
+        font-size: 32px;
+        line-height: 38px;
+
+        margin-bottom: 24px;
+    }
+
+
+    .articles .row
+    {
+        margin-bottom: -20px;
+        margin-left: -20px;
+    }
+
+    .articles .row > *
+    {
+        width: calc(25% - 20px);
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+
+    .articles .article .info
+    {
+        padding: 19px;
+    }
 }
